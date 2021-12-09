@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Advent 2021 Core Edition", ".NET Core\Advent 2021 Core Edition.csproj", "{9CE3290E-D40C-4843-AF37-AABBE47EEA81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advent 2021 Framework Edition", ".NET Framework\Advent 2021 Framework Edition.csproj", "{24BAAD87-C623-4578-95A2-167E3087E37A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CE3290E-D40C-4843-AF37-AABBE47EEA81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE3290E-D40C-4843-AF37-AABBE47EEA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE3290E-D40C-4843-AF37-AABBE47EEA81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE3290E-D40C-4843-AF37-AABBE47EEA81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24BAAD87-C623-4578-95A2-167E3087E37A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24BAAD87-C623-4578-95A2-167E3087E37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24BAAD87-C623-4578-95A2-167E3087E37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24BAAD87-C623-4578-95A2-167E3087E37A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89152AD7-AB63-4238-9555-259440D2DD3C}
+	EndGlobalSection
+EndGlobal
