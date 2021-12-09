@@ -23,9 +23,11 @@ namespace Advent_2021_Framework_Edition
 
             Console.WriteLine($"\nDay {i++}");
             Console.WriteLine($"The Part1 Solution is {Day3.Part1()}");
-            Console.WriteLine($"The Part2 Solution is {Day3.Part2(1)}");
+            Console.WriteLine($"The Part2 Solution is {Day3.Part2()}");
 
-
+            Console.WriteLine($"\nDay {i++}");
+            Console.WriteLine($"The Part1 Solution is {Day4.Part1()}");
+            Console.WriteLine($"The Part2 Solution is {Day4.Part2()}");
 
 
 
@@ -240,6 +242,7 @@ namespace Advent_2021_Framework_Edition
                 {
                     resultsList.RemoveAll(x => x.ElementAt(i) == '1');
                 }
+                Debug.WriteLine($"o2 gen {resultsList.Count}");
                 if (resultsList.Count == 1)
                 {
                     break;
@@ -270,6 +273,7 @@ namespace Advent_2021_Framework_Edition
                 {
                     resultsList.RemoveAll(x => x.ElementAt(i) == '1');
                 }
+                Debug.WriteLine($"co2 gen {resultsList.Count}");
                 if (resultsList.Count == 1)
                 {
                     break;
@@ -278,6 +282,69 @@ namespace Advent_2021_Framework_Edition
 
             var co2rating = Convert.ToInt32(resultsList.FirstOrDefault(), 2);
             return co2rating * oxygen_generator_rating;
+        }
+    }
+
+    public static class Day4
+    {
+        public static int Part1()
+        {
+            string PathToInput = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            PathToInput = PathToInput.Remove(PathToInput.LastIndexOf(@"\")) + "\\Day4_input.txt";
+            Debug.WriteLine(PathToInput);
+
+            var input = File.ReadLines(PathToInput).Select(x => x).ToArray();
+
+            var numsToBeCalled = input[0].Split(',');
+
+            List<(int, bool)[,]> boards = new List<(int, bool)[,]>();
+
+            for (int i = 1; i < input.Length; i+=1)
+            {
+                try
+                {
+                    var first_row = input[i + 1].Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                    var second_row = input[i + 2].Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                    var third_row = input[i + 3].Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                    var forth_row = input[i + 4].Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                    (int, bool)[,] board =
+                    {
+                    { (Int32.Parse(first_row[0]),false),(Int32.Parse(first_row[1]),false),(Int32.Parse(first_row[2]),false),(Int32.Parse(first_row[3]),false),(Int32.Parse(first_row[4]),false), },
+                    { (Int32.Parse(second_row[0]),false),(Int32.Parse(second_row[1]),false),(Int32.Parse(second_row[2]),false),(Int32.Parse(second_row[3]),false),(Int32.Parse(second_row[4]),false), },
+                    { (Int32.Parse(third_row[0]),false),(Int32.Parse(third_row[1]),false),(Int32.Parse(third_row[2]),false),(Int32.Parse(third_row[3]),false),(Int32.Parse(third_row[4]),false), },
+                    { (Int32.Parse(forth_row[0]),false),(Int32.Parse(forth_row[1]),false),(Int32.Parse(forth_row[2]),false),(Int32.Parse(forth_row[3]),false),(Int32.Parse(forth_row[4]),false), }
+                };
+                    boards.Add(board);
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }//Format data into boards
+
+            bool complete = false;
+            List<int> calledNumsList = new List<int>() { Int32.Parse(numsToBeCalled[0]) };
+            while(!complete)
+            {
+
+            }
+
+            return 0;
+
+            bool updateBoard(ref (int, bool)[,] table,int CalledNum)
+            {
+                return false;
+            }
+        }
+        public static int Part2()
+        {
+            string PathToInput = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            PathToInput = PathToInput.Remove(PathToInput.LastIndexOf(@"\")) + "\\Day4_input.txt";
+            Debug.WriteLine(PathToInput);
+
+            var input = File.ReadLines(PathToInput).Select(x => x).ToArray();
+
+            return 0;
         }
     }
 }
