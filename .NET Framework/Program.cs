@@ -23,7 +23,7 @@ namespace Advent_2021_Framework_Edition
 
             Console.WriteLine($"\nDay {i++}");
             Console.WriteLine($"The Part1 Solution is {Day3.Part1()}");
-            Console.WriteLine($"The Part2 Solution is {Day3.Part2()}");
+            Console.WriteLine($"The Part2 Solution is {Day3.Part2(1)}");
 
 
 
@@ -217,22 +217,7 @@ namespace Advent_2021_Framework_Edition
             Debug.WriteLine(PathToInput);
 
             var input = File.ReadLines(PathToInput).Select(x => x).ToArray();
-            /*
-            input = new string[]
-    {
-    "00100",
-    "11110",
-    "10110",
-    "10111",
-    "10101",
-    "01111",
-    "00111",
-    "11100",
-    "10000",
-    "11001",
-    "00010",
-    "01010"
-    };*/
+
             var resultsList = input.ToList();
 
             for (int i = 0; i < resultsList[0].Length; i++)
@@ -260,6 +245,7 @@ namespace Advent_2021_Framework_Edition
                     break;
                 }
             }
+
             var oxygen_generator_rating = Convert.ToInt32(resultsList.FirstOrDefault(), 2);
 
             resultsList = input.ToList();
@@ -276,7 +262,7 @@ namespace Advent_2021_Framework_Edition
                     }
                     else counter_zero++;
                 }
-                if (counter_zero >= counter_one)
+                if (counter_zero > counter_one)
                 {
                     resultsList.RemoveAll(x => x.ElementAt(i) == '0');
                 }
@@ -291,7 +277,6 @@ namespace Advent_2021_Framework_Edition
             }
 
             var co2rating = Convert.ToInt32(resultsList.FirstOrDefault(), 2);
-            Debug.WriteLine(co2rating);
             return co2rating * oxygen_generator_rating;
         }
     }
